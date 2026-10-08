@@ -2,11 +2,11 @@
 
 **An air traffic controller for your AI coding sessions.**
 
-Coordinate work across chats, keep changes recoverable, and release in the right order.
+**Your AI coding chats are making progress. But are they working together?**
 
-Several AI coding chats can each be making progress without knowing what the others are doing. Control Tower gives your project one place to connect that work: who owns what, which changes depend on each other, and whose turn it is to release.
+One chat is fixing a bug. Another is building a feature. A third is ready to release—and may not know about either of the others. Meanwhile, you’re carrying updates between chats, tracking unfinished branches, and trying to keep changes from landing in the wrong order.
 
-Keep building in your working chats. Check in with the Control Tower chat for the overall picture. Where your tools support it and you authorize it, the coordinator talks directly with the other sessions; otherwise, it prepares handoffs you can pass along.
+Control Tower gives your project an air traffic controller: one chat that connects the work across sessions, keeps track of ownership and dependencies, and coordinates what ships next. You keep building; it helps keep everyone working from the same picture.
 
 [v1.0](https://github.com/mmaser/control-tower/releases/tag/v1.0.0) · [Quick start](#quick-start) · [Setup by app](SETUP.md) · [Examples](#examples) · [Feedback](CONTRIBUTING.md)
 
@@ -110,6 +110,8 @@ Its report might be:
 > “The settings screen needs the data-model change first. I've prepared and checked that combined candidate. The other fix is already live. The interrupted merge is preserved for its owner, and one branch still has unclear ownership, so I've left it intact. Useful work is backed up; nothing has been deleted or published.”
 
 ## Where it works
+
+Where your tools support it and you authorize it, the coordinator talks directly with the other sessions; otherwise, it prepares handoffs you can pass along.
 
 The setup guide covers Codex desktop and CLI, Claude Desktop's Code tab, Claude Code CLI, and general Claude chat. The local skill files are shared between desktop and CLI within each tool when they use the same environment. Their access to other sessions can differ.
 
