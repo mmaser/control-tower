@@ -8,9 +8,7 @@ Several AI coding chats can each be making progress without knowing what the oth
 
 Keep building in your working chats. Check in with the Control Tower chat for the overall picture. Where your tools support it and you authorize it, the coordinator talks directly with the other sessions; otherwise, it prepares handoffs you can pass along.
 
-[Quick start](#quick-start) · [Setup by app](SETUP.md) · [Examples](#examples) · [Feedback](CONTRIBUTING.md)
-
-> **Early preview · 0.1.0-review.2.** Developed from a working Codex coordination workflow. The packaged skill is still in a local trial; full installation and adoption testing remains open. Guidance covers web, iOS, Android, and backend projects, with wider compatibility still to be evaluated.
+[v1.0](https://github.com/mmaser/control-tower/releases/tag/v1.0.0) · [Quick start](#quick-start) · [Setup by app](SETUP.md) · [Examples](#examples) · [Feedback](CONTRIBUTING.md)
 
 ## What it looks like
 
@@ -37,13 +35,13 @@ Keep a **Control Tower chat alongside your working chats in each project**. You 
 
 </details>
 
-These illustrative examples are adapted from the Codex workflow that informed Control Tower. They show how coordination works, not test results for this candidate.
+These illustrative examples are adapted from the Codex workflow that informed Control Tower.
 
 ## Quick start
 
 Start with one project. Your coding agent can handle the setup details.
 
-1. **Get the package.** Download and extract [`control-tower-release.zip`](https://github.com/mmaser/control-tower/releases/download/v0.1.0-review.2/control-tower-release.zip), or download this repository through **Code → Download ZIP**. Find the folder containing `SKILL.md` and `SETUP.md`; a GitHub source download may call it `control-tower-main`.
+1. **Get the package.** Download and extract [`control-tower-release.zip`](https://github.com/mmaser/control-tower/releases/download/v1.0.0/control-tower-release.zip), or download this repository through **Code → Download ZIP**. Find the folder containing `SKILL.md` and `SETUP.md`; a GitHub source download may call it `control-tower-main`.
 2. **Open your project** in Codex or Claude Code, in the desktop app or CLI. In the chat you want to coordinate the project, paste the prompt below, replacing `[folder location]` with that extracted folder's location.
 3. **Check the setup report.** It should identify the loaded version, the project agreement, and which existing sessions have acknowledged it. If the coordinator cannot contact them, paste its prepared handoff into those chats.
 
@@ -75,7 +73,7 @@ You keep control of product direction and publication authority. Control Tower f
 
 ## Examples
 
-These fictional examples illustrate intended behavior, not completed evaluations. Think of the coordinator as air traffic control for your coding sessions: it helps establish what is ready, what depends on something else, and whose turn it is to release, while independent work keeps moving.
+These fictional examples show how coordination can work across different projects. Think of the coordinator as air traffic control for your coding sessions: it helps establish what is ready, what depends on something else, and whose turn it is to release, while independent work keeps moving.
 
 ### An iOS app and its backend
 
@@ -117,7 +115,7 @@ The setup guide covers Codex desktop and CLI, Claude Desktop's Code tab, Claude 
 
 Claude Desktop's Code tab also documents session inspection and messaging, so the same coordination approach can apply there. Check visibility in your actual environment; use explicit handoffs where direct messaging is unavailable. [Claude session coordination](https://code.claude.com/docs/en/desktop#work-across-sessions)
 
-The guidance adapts to websites, mobile apps, backends, and products combining them. Those are intended use cases, not a claim that every host and release path has been tested.
+Developed through hands-on use in Codex across active projects. Includes setup guidance for Claude and coordination guidance for web, iOS, Android, and backend work. Experience across those environments will inform future updates.
 
 ## Requirements and limits
 
@@ -136,7 +134,7 @@ The Git helper uses cached remote refs, omits ignored artifacts, and never decid
 
 ## Feedback and updates
 
-If you try Control Tower, feedback about confusing setup, unnecessary ceremony, or a handoff that breaks down is especially useful. See [how to report an issue or suggest a change](CONTRIBUTING.md).
+Feedback is welcome—especially what worked, what got in the way, and what would make Control Tower more useful. [Open an issue](https://github.com/mmaser/control-tower/issues) or see [how to report a problem or suggest a change](CONTRIBUTING.md).
 
 Releases will identify their version and changes. Updating installed files does not guarantee that an active chat reloads them; verify the version and use a fresh session when needed.
 
