@@ -1,0 +1,7 @@
+# Local files that do not belong in the package
+.DS_Store
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.zip

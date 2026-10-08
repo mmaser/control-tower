@@ -1,0 +1,4 @@
+interface:
+  display_name: "Control Tower"
+  short_description: "An air traffic controller for your AI coding sessions"
+  default_prompt: "Use $control-tower to coordinate work across this project’s chats, keep changes recoverable, and release in the right order."
