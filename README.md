@@ -1,12 +1,12 @@
 # Control Tower
 
-**An air traffic controller for your AI coding sessions.**
+**An air traffic controller for your coding sessions.**
 
-**Your AI coding chats are making progress. But are they working together?**
+### Your agents are making progress. But are they working together?
 
-One chat is fixing a bug. Another is building a feature. A third is ready to release—and may not know about either of the others. Meanwhile, you’re carrying updates between chats, tracking unfinished branches, and trying to keep changes from landing in the wrong order.
+One session is fixing a bug. Another is building a feature. A third is ready to release—and may not know about either of the others. Meanwhile, you’re carrying updates between sessions, tracking unfinished branches, and trying to keep changes from landing in the wrong order.
 
-Control Tower gives your project an air traffic controller: one chat that connects the work across sessions, keeps track of ownership and dependencies, and coordinates what ships next. You keep building; it helps keep everyone working from the same picture.
+Control Tower gives your project an air traffic controller: one session that connects the work across your agents, keeps track of ownership and dependencies, and coordinates what ships next. You keep building; it helps keep everyone working from the same picture.
 
 [v1.0](https://github.com/mmaser/control-tower/releases/tag/v1.0.0) · [Quick start](#quick-start) · [Setup by app](SETUP.md) · [Examples](#examples) · [Feedback](CONTRIBUTING.md)
 
