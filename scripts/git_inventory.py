@@ -126,7 +126,9 @@ def inventory(repo, release_ref=None):
             result = run(repo, 'merge-base', '--is-ancestor', sha, release_sha, allowed=(0, 1))
             row['fullyContainedInReleaseHistory'] = result.returncode == 0
         branches.append(row)
-    entries = run(repo, 'stash', 'list', '-z', '--format=%gd%x00%H%x00%cI%x00%gs').stdout.decode('utf-8', 'replace').split('\0')
+    entries = []
+    if run(repo, 'show-ref', '--verify', '--quiet', 'refs/stash', allowed=(0, 1)).returncode == 0:
+        entries = run(repo, 'log', '-g', '-z', '--format=%gd%x00%H%x00%cI%x00%gs', 'refs/stash').stdout.decode('utf-8', 'replace').split('\0')
     stashes = [dict(zip(('ref', 'commit', 'createdAt', 'message'), entries[index:index + 4])) for index in range(0, len(entries) - 1, 4)]
     return {
         'observedAt': datetime.now(timezone.utc).isoformat(), 'repository': str(Path(repo).resolve()),
