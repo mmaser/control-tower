@@ -10,9 +10,11 @@ Control Tower gives your project an air traffic controller: one session that con
 
 [v1.0](https://github.com/mmaser/control-tower/releases/tag/v1.0.0) · [Quick start](#quick-start) · [Setup by app](SETUP.md) · [Examples](#examples) · [Feedback](CONTRIBUTING.md)
 
-## What it looks like
+## How I use it
 
-Keep a **Control Tower chat alongside your working chats in each project**. You can call it “DevOps,” as in these Codex examples.
+I keep a session called **DevOps** in every project and run Control Tower there. It’s the project’s air traffic controller—the place I check for what’s happening across the other sessions and what’s ready to ship.
+
+During setup, Control Tower adds the coordination agreement to the project’s instructions and brings existing sessions on board through messages or handoffs. New sessions pick up that agreement from the project instructions. Each session keeps doing its own work, with DevOps coordinating the shared decisions and release order.
 
 ![Codex project sidebar showing a DevOps chat alongside a chat reviewing code comments.](assets/codex-project-chats.png)
 
