@@ -43,7 +43,7 @@ These illustrative examples are adapted from the Codex workflow that informed Co
 
 Start with one project. Your coding agent can handle the setup details.
 
-1. **Get the package.** Download and extract `control-tower-release.zip` when a release is available, or download this repository through **Code → Download ZIP**. Find the folder containing `SKILL.md` and `SETUP.md`; a GitHub source download may call it `control-tower-main`.
+1. **Get the package.** Download and extract [`control-tower-release.zip`](https://github.com/mmaser/control-tower/releases/download/v0.1.0-review.2/control-tower-release.zip), or download this repository through **Code → Download ZIP**. Find the folder containing `SKILL.md` and `SETUP.md`; a GitHub source download may call it `control-tower-main`.
 2. **Open your project** in Codex or Claude Code, in the desktop app or CLI. In the chat you want to coordinate the project, paste the prompt below, replacing `[folder location]` with that extracted folder's location.
 3. **Check the setup report.** It should identify the loaded version, the project agreement, and which existing sessions have acknowledged it. If the coordinator cannot contact them, paste its prepared handoff into those chats.
 
@@ -141,3 +141,7 @@ If you try Control Tower, feedback about confusing setup, unnecessary ceremony, 
 Releases will identify their version and changes. Updating installed files does not guarantee that an active chat reloads them; verify the version and use a fresh session when needed.
 
 Created by [Mike Maser](https://github.com/mmaser), while learning what happens when several AI coding chats all have good intentions at once.
+
+## License
+
+[MIT](LICENSE) · Copyright © 2026 Mike Maser.
