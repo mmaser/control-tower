@@ -75,7 +75,7 @@ You keep control of product direction and publication authority. Control Tower f
 
 ## Examples
 
-These fictional examples show how coordination can work across different projects. Think of the coordinator as air traffic control for your coding sessions: it helps establish what is ready, what depends on something else, and whose turn it is to release, while independent work keeps moving.
+These examples show how coordination can work across different projects. Think of the coordinator as air traffic control for your coding sessions: it helps establish what is ready, what depends on something else, and whose turn it is to release, while independent work keeps moving.
 
 ### An iOS app and its backend
 
