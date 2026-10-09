@@ -129,6 +129,8 @@ Control Tower supplies instructions, not an enforced merge queue or background s
 
 The Git helper uses cached remote refs, omits ignored artifacts, and never decides that a branch is abandoned or safe to delete. Its output is a starting point for investigation, not proof of remote recovery.
 
+It also reports in-progress merges, rebases, cherry-picks and reverts, repository-wide stashes, and counts of detached-HEAD commits on no local branch or cached remote.
+
 ## Inside the package
 
 - [SKILL.md](SKILL.md) — operating instructions for the coordinator.

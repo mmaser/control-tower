@@ -40,6 +40,40 @@ def changes(repo):
     return result
 
 
+def operation(worktree_path):
+    def read(path):
+        try:
+            return path.read_text().strip()
+        except OSError:
+            return None
+
+    for marker in ('rebase-merge', 'rebase-apply', 'MERGE_HEAD', 'CHERRY_PICK_HEAD', 'REVERT_HEAD', 'sequencer'):
+        path = Path(output(worktree_path, 'rev-parse', '--git-path', marker))
+        if not path.is_absolute():
+            path = Path(worktree_path) / path
+        if not path.exists():
+            continue
+        if marker.startswith('rebase-'):
+            if marker == 'rebase-apply' and (path / 'applying').exists():
+                continue
+            result = {'type': 'rebase'}
+            for key, name in (('branch', 'head-name'), ('onto', 'onto')):
+                value = read(path / name)
+                if value:
+                    result[key] = value
+            return result
+        if marker == 'sequencer':
+            todo = read(path / 'todo')
+            command = todo.splitlines()[0].split() if todo else []
+            return {'type': {'pick': 'cherry-pick', 'revert': 'revert'}.get(command[0] if command else '', 'sequencer')}
+        result = {'type': {'MERGE_HEAD': 'merge', 'CHERRY_PICK_HEAD': 'cherry-pick', 'REVERT_HEAD': 'revert'}[marker]}
+        value = read(path)
+        if value:
+            result.update({'mergeHeads': value.splitlines()} if marker == 'MERGE_HEAD' else {'commit': value})
+        return result
+    return None
+
+
 def inventory(repo, release_ref=None):
     output(repo, 'rev-parse', '--git-dir')
     release_sha = output(repo, 'rev-parse', '--verify', '--end-of-options', release_ref + '^{commit}') if release_ref else None
@@ -60,6 +94,11 @@ def inventory(repo, release_ref=None):
             try:
                 record['changes'] = changes(record['worktree'])
                 record['dirty'] = bool(record['changes'])
+                current_operation = operation(record['worktree'])
+                if current_operation:
+                    record['operation'] = current_operation
+                if record.get('detached'):
+                    record['commitsOnNoLocalBranchOrCachedRemote'] = int(output(record['worktree'], 'rev-list', '--count', record['HEAD'], '--not', '--branches', '--remotes'))
             except RuntimeError as error:
                 record['inspectionError'] = str(error)
         worktrees.append(record)
@@ -74,6 +113,7 @@ def inventory(repo, release_ref=None):
             'matchingCachedRemoteTips': [name for name, value in remote_tips.items() if value == sha],
             'commitsAbsentFromCachedRemotes': int(output(repo, 'rev-list', '--count', sha, '--not', '--remotes')),
             'worktrees': [w['worktree'] for w in worktrees if w.get('branch') == ref],
+            'rebasingIn': [w['worktree'] for w in worktrees if (w.get('operation') or {}).get('branch') == ref],
             'fullyContainedInReleaseHistory': None,
         }
         if upstream:
@@ -86,12 +126,16 @@ def inventory(repo, release_ref=None):
             result = run(repo, 'merge-base', '--is-ancestor', sha, release_sha, allowed=(0, 1))
             row['fullyContainedInReleaseHistory'] = result.returncode == 0
         branches.append(row)
+    entries = []
+    if run(repo, 'show-ref', '--verify', '--quiet', 'refs/stash', allowed=(0, 1)).returncode == 0:
+        entries = run(repo, 'log', '-g', '-z', '--format=%gd%x00%H%x00%cI%x00%gs', 'refs/stash').stdout.decode('utf-8', 'replace').split('\0')
+    stashes = [dict(zip(('ref', 'commit', 'createdAt', 'message'), entries[index:index + 4])) for index in range(0, len(entries) - 1, 4)]
     return {
         'observedAt': datetime.now(timezone.utc).isoformat(), 'repository': str(Path(repo).resolve()),
         'releaseRef': release_ref, 'releaseCommit': release_sha,
         'remoteState': 'Cached local refs only; no fetch or remote-server verification performed.',
-        'limitations': 'History containment does not detect squash-equivalent work. Ignored artifacts are not inventoried. No branch is classified as abandoned or safe to delete.',
-        'worktrees': worktrees, 'branches': branches,
+        'limitations': 'History containment does not detect squash-equivalent work. Ignored artifacts are not inventoried. Stash and operation detection read local state only and do not establish ownership. No branch is classified as abandoned or safe to delete.',
+        'worktrees': worktrees, 'branches': branches, 'stashes': stashes,
     }
 
 
