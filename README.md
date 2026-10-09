@@ -8,7 +8,7 @@ One session is fixing a bug. Another is building a feature. A third is ready to 
 
 Control Tower gives your project an air traffic controller: one session that connects the work across your agents, keeps track of ownership and dependencies, and coordinates what ships next. You keep building; it helps keep everyone working from the same picture.
 
-[v1.0.1](https://github.com/mmaser/control-tower/releases/tag/v1.0.1) · [Quick start](#quick-start) · [Setup by app](SETUP.md) · [Examples](#examples) · [Feedback](CONTRIBUTING.md)
+[v1.1.0](https://github.com/mmaser/control-tower/releases/tag/v1.1.0) · [Quick start](#quick-start) · [Setup by app](SETUP.md) · [Examples](#examples) · [Feedback](CONTRIBUTING.md)
 
 ## How I use it
 
@@ -43,7 +43,7 @@ These examples are adapted from the Codex workflow that informed Control Tower.
 
 Start with one project. Your coding agent can handle the setup details.
 
-1. **Get the package.** Download and extract [`control-tower-release.zip`](https://github.com/mmaser/control-tower/releases/download/v1.0.1/control-tower-release.zip), or download this repository through **Code → Download ZIP**. Find the folder containing `SKILL.md` and `SETUP.md`; a GitHub source download may call it `control-tower-main`.
+1. **Get the package.** Download and extract [`control-tower-release.zip`](https://github.com/mmaser/control-tower/releases/download/v1.1.0/control-tower-release.zip), or download this repository through **Code → Download ZIP**. Find the folder containing `SKILL.md` and `SETUP.md`; a GitHub source download may call it `control-tower-main`.
 2. **Open your project** in Codex or Claude Code, in the desktop app or CLI. In the chat you want to coordinate the project, paste the prompt below, replacing `[folder location]` with that extracted folder's location.
 3. **Check the setup report.** It should identify the loaded version, the project agreement, and which existing sessions have acknowledged it. If the coordinator cannot contact them, paste its prepared handoff into those chats.
 
