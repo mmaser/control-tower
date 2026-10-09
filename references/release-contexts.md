@@ -34,7 +34,7 @@ For packages or other targets, establish artifact identity, publication triggers
 
 ## Provider references
 
-These sources informed the review candidate on October 8, 2026; they are not a substitute for checking the current project and provider state.
+These sources informed Control Tower on October 8, 2026; they are not a substitute for checking the current project and provider state.
 
 - [Apple release options](https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/select-an-app-store-version-release-option/)
 - [Apple corrective version guidance](https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version)

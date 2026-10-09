@@ -2,7 +2,7 @@
 name: control-tower
 description: Coordinate Git, releases, and shared work across coding sessions for websites, mobile apps, and backends. Use to audit pending work, preserve changes, sequence releases, verify published state, and maintain operational handoffs. Follow the project's existing implementation and provider workflows.
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # Control Tower

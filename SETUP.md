@@ -2,7 +2,7 @@
 
 **Install the skill, establish one project coordinator, and bring the other sessions into the agreement.** Installation makes the workflow available; the project agreement tells participants how to coordinate.
 
-This guide accompanies Control Tower v1.0. The Codex and Claude setup routes follow official documentation checked October 8, 2026. Start with one project and verify discovery and coordination in your own environment using the checks below.
+This guide accompanies Control Tower v1.0.1. The Codex and Claude setup routes follow official documentation checked October 8, 2026. Start with one project and verify discovery and coordination in your own environment using the checks below.
 
 ## Quick start
 
@@ -20,7 +20,7 @@ The rest of this page is a detailed reference. Read only the section you need: [
 | Claude in a terminal | [Claude Code CLI](#claude-code-cli) | Uses Claude Code's local installation paths. |
 | Claude Desktop, general chat or Cowork | [Claude Desktop — general chat](#claude-desktop-general-chat) | Uses account skill upload and project settings; see the sync note below. |
 
-**Start with one project for a pilot.** User scope, sometimes called global, makes the skill available across your projects in that local environment. Each project still needs its own coordinator agreement. Account skills have a separate distribution route described below.
+**Start with one project.** User scope, sometimes called global, makes the skill available across your projects in that local environment. Each project still needs its own coordinator agreement. Account skills have a separate distribution route described below.
 
 ### Prepare the local package
 
@@ -107,7 +107,7 @@ Use this prompt in whichever app you chose:
 
 > “Locate Control Tower and read its SKILL.md. Report its metadata.version and the exact file path or account-skill source you loaded. Tell me which project files and other sessions you can access. Do not establish or replace a coordinator yet.”
 
-For this release, expect version `1.0.0`. Resolve a missing skill, conflicting copy, or wrong version before continuing. Installation, account sync, and shared files do not by themselves connect conversations. Codex and Claude can participate in the same project agreement, but each needs its own discovery check and an available, authorized handoff route.
+For this release, expect version `1.0.1`. Resolve a missing skill, conflicting copy, or wrong version before continuing. Installation, account sync, and shared files do not by themselves connect conversations. Codex and Claude can participate in the same project agreement, but each needs its own discovery check and an available, authorized handoff route.
 
 ## 2. Establish the coordinator for this project
 

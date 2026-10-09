@@ -6,7 +6,7 @@ labels: ""
 assignees: ""
 ---
 
-<!-- Use a fictional or anonymized example. Do not post secrets, private links, or full chat histories. -->
+<!-- Use an anonymized example. Do not post secrets, private links, or full chat histories. -->
 
 **Version and environment**
 Control Tower version, app, desktop or CLI, and operating system:
